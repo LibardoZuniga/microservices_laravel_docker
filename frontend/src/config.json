@@ -1,6 +1,6 @@
 {
-  "store_url": "http://localhost:8888/",
-  "kitchen_url": "http://localhost:8200/",
+  "store_url": "http://127.0.0.1:8888/",
+  "kitchen_url": "http://127.0.0.1:8200/",
   "user": "libardo.zuniga@gmail.com",
   "pass": "123"
 }

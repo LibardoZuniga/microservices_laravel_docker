@@ -2,7 +2,7 @@ import axios from 'axios';
 import config from '../config.json'
 
 const logIn = async () => {
-  return axios.post(`http://127.0.0.1:8200/api/login`, {
+  return axios.post(`${config.store_url}api/login`, {
       email: config.user,
       password: config.pass
     })

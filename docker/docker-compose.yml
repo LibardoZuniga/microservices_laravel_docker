@@ -22,13 +22,12 @@ services:
       - laravel_base
   web:
     build:
-      context: web
+      context: frontend
       dockerfile: Dockerfile
     ports:
-      - 8081:8080
-    command: npm run serve
+      - 8081:80
     volumes:
-      - ./../web:/usr/src/app
+      - ./../frontend/dist:/var/www/html
     networks:
       - laravel_base
   mysql:
