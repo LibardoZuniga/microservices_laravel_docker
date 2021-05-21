@@ -1,0 +1,50 @@
+version: "3.8"
+services:
+  kitchen:
+    build:
+      context: kitchen
+      dockerfile: Dockerfile
+    ports:
+      - 8200:80
+    volumes:
+      - ./../kitchen:/var/www/html
+    networks:
+      - laravel_base
+  store:
+    build:
+      context: store
+      dockerfile: Dockerfile
+    ports:
+      - 8888:80
+    volumes:
+      - ./../store:/var/www/html
+    networks:
+      - laravel_base
+  web:
+    build:
+      context: web
+      dockerfile: Dockerfile
+    ports:
+      - 8081:8080
+    command: npm run serve
+    volumes:
+      - ./../web:/usr/src/app
+    networks:
+      - laravel_base
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: laravel_base
+      MYSQL_USER: laravel_base
+      MYSQL_PASSWORD: cha123acmm
+      MYSQL_ROOT_PASSWORD: rootcha123acmm
+    ports:
+      - 3309:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - laravel_base
+networks:
+  laravel_base:
