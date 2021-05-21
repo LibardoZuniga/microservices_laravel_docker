@@ -8,7 +8,10 @@ This Project is a test of company Alegra, I try to create an architecture based 
 - Vuejs
 - Apache
 
-
+## URL DEMO
+```
+http://
+```
 
 ## Project Setup
 
@@ -17,7 +20,14 @@ This Project is a test of company Alegra, I try to create an architecture based 
 1. Clone this repo:
 
 ```
-git clone 
+git clone https://github.com/LibardoZuniga/lunch_donation.git
 cd lunch_donation
 
+```
+2. Initialize Docker:
+
+```
+cd docker
+docker-compose build
+docker-compose up -d
 ```
