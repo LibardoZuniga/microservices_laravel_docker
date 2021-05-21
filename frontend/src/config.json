@@ -1,0 +1,6 @@
+{
+  "store_url": "http://localhost:8888/",
+  "kitchen_url": "http://localhost:8200/",
+  "user": "libardo.zuniga@gmail.com",
+  "pass": "123"
+}
