@@ -7,8 +7,7 @@ This Project is a test of company Alegra, I try to create an architecture based 
 - MySQL
 - Vuejs
 - Apache
-- Redis Commander
-- Mailhog (Mailcatcher alternative)
+
 
 
 ## Project Setup
