@@ -83,7 +83,6 @@ export default {
     },
     steps(stepId){
       this.modalShow=false;
-      this.listStore();
       this.updateTab(stepId);
     },
     finish_order(indexOrder){
