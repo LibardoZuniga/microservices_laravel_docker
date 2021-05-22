@@ -31,7 +31,7 @@
 
         </b-card>
         <b-modal v-model="modalShow" hide-footer>
-          <Recipe :items="item" :title="title" :recipe="recipeSelect" :updateStatus="updateStatus" ></Recipe>
+          <Recipe :items="item" :title="title" :recipe="recipeSelect" :updateStatus="updateStatus" :steps="steps"></Recipe>
         </b-modal>
   </div>
 </template>
@@ -45,6 +45,7 @@ export default {
   components:{Recipe},
   props: {
     orders: Array,
+    updateTab:Function,
     listOrders:Function
   },
   data() {
@@ -79,6 +80,11 @@ export default {
       const result = this.orders[indexOrder].filter(order => order.status=='preparation');
       return (result.length>0)?false:true;
 
+    },
+    steps(stepId){
+      this.modalShow=false;
+      this.listStore();
+      this.updateTab(stepId);
     },
     finish_order(indexOrder){
       if(this.validate_order(indexOrder)){

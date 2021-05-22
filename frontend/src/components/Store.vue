@@ -1,8 +1,12 @@
 <template>
   <div class="Store">
+    
     <b-alert  variant="danger"  dismissible :show="error_buy" >No se encontro disponibilidad de este producto en el mercado, por intentarlo de nuevo</b-alert>
     <b-alert  variant="success"  dismissible :show="success_buy" >Se compro con exito!</b-alert>
     <b-spinner v-if="loadBuy" class="ml-auto" variant="info"  style="width: 2rem; height: 2rem;"></b-spinner>
+    <b-button variant="success" style="float:right;" v-on:click="listStore()">
+       <b-icon icon="arrow-clockwise" scale="1" ></b-icon>
+    </b-button>
     <b-table small :fields="fields" :items="items" responsive="sm">
       <template #cell(buy)="row" >
         <b-button variant="info" class="btnsmall" v-on:click="buy_store(row)">
@@ -39,6 +43,7 @@ export default {
   },
   methods: {
     listStore(){
+      this.items=[];
       httprequest('store','api/v1/store', 'GET', {}).then(result => {
         this.items= result.data;
       });

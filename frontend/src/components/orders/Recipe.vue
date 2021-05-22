@@ -23,7 +23,7 @@
                   </div>
                   <div v-else-if="item.quantity < 1">
                      <small>Agotado  </small>
-                      <b-button variant="info" class="btnsmall">
+                      <b-button variant="info" class="btnsmall" v-on:click="steps(1)">
                         comprar
                       </b-button>
                   </div>
@@ -48,7 +48,9 @@ export default {
     items: Object,
     recipe: Object,
     title: String,
-    updateStatus:Function
+    updateStatus:Function,
+    steps:Function
+    
   },
   data() {
     return {

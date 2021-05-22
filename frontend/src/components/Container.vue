@@ -8,11 +8,11 @@
     <b-row>
       <b-col>
         <b-card no-body>
-          <b-tabs card>
+          <b-tabs card v-model="step">
             <b-tab title="Cocina" active>
               <b-row>
                 <b-col>
-                  <Order :orders.sync="order" :listOrders="listOrders" ></Order>
+                  <Order :orders.sync="order" :listOrders="listOrders" :updateTab="updateTab" ></Order>
                 </b-col>
 
               </b-row>
@@ -43,7 +43,8 @@ export default {
   components:{Nav,Reports,Store,Order},
   data() {
     return {
-      order:[]
+      order:[],
+      step:0
     };
   },
   methods: {
@@ -58,6 +59,9 @@ export default {
       httprequest('kitchen','api/v1/order', 'GET', {}).then(result => {
         this.order=result.data;
       });
+    },
+    updateTab(stepId){
+      this.step=stepId;
     }
 	},
 	mounted() {
