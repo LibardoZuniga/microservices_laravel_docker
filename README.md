@@ -31,3 +31,29 @@ cd docker
 docker-compose build
 docker-compose up -d
 ```
+3. ## Start coding laravel microservices
+
+
+
+Install dependencies
+```bash
+composer install
+```
+Configure the database access in the .env file
+```bash
+cp .env.example .env
+```
+Generate laravel key
+```bash
+php artisan key:generate
+```
+
+Give read/write access to the storage folder
+```bash
+chmod -R ugo+rw storage/
+```
+
+Generate the database
+```bash
+php artisan migrate --seed
+```
