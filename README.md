@@ -10,7 +10,7 @@ This Project is a test of company Alegra, I try to create an architecture based 
 
 ## URL DEMO
 ```
-http://
+http://35.240.33.7
 ```
 
 ## Project Setup
